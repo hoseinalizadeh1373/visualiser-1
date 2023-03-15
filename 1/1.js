@@ -12,19 +12,19 @@ window.onload = function() {
       var src = context.createMediaElementSource(audio);
       var analyser = context.createAnalyser();
   
-      var canvas = document.getElementById("canvas");
+     // var canvas = document.getElementById("canvas");
       var canvas2 = document.getElementById("canvas2");
-      canvas.width = window.innerWidth;
+     // canvas.width = window.innerWidth;
       canvas2.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+     // canvas.height = window.innerHeight;
       canvas2.height = window.innerHeight;
      
-      ctx = canvas.getContext("2d");
+      //ctx = canvas.getContext("2d");
       ctx2 = canvas2.getContext("2d");
-      ctx.globalAlpha =0.2;
+     // ctx.globalAlpha =0.2;
       
 
-       make_image();
+       //make_image();
   
       src.connect(analyser);
       analyser.connect(context.destination);
@@ -36,18 +36,21 @@ window.onload = function() {
   
       var dataArray = new Uint8Array(bufferLength);
   
-      var WIDTH = canvas.width;
-      var HEIGHT = canvas.height;
+      var WIDTH = canvas2.width;
+      var HEIGHT = canvas2.height;
   
       var barWidth = (WIDTH / bufferLength) * 2.5;
       var barHeight;
       var x = 0;
-    
+     // ctx.fillStyle = "#000";
+      //ctx.fillRect(0, 0, WIDTH, HEIGHT);
       function renderFrame() {
         requestAnimationFrame(renderFrame);
+        
+        
   
         x = 0;
-  
+ 
         analyser.getByteFrequencyData(dataArray);
     
         ctx2.fillStyle = "#fff";
@@ -64,6 +67,7 @@ window.onload = function() {
           ctx2.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
   
           x += barWidth + 1;
+        
         }
       
       }
@@ -81,6 +85,7 @@ window.onload = function() {
         }
         
     }
+ 
   };
   
   
