@@ -8,13 +8,15 @@
     <script type="text/javascript" src="dist/html2canvas.js"></script>
 </head>
 <body>
-    <!-- <button style="position: absolute;left: 80%;" onclick="takeshot()">sds</button> -->
-    <!-- <canvas id="canvas" style="cursor: pointer;z-index: 999999; position: absolute;left: 80%;"></canvas> -->
+    <div id='wrapper'>
+        <canvas id="canvasBottom" width=300 height=200></canvas>
+        <canvas id="canvasTop" width=300 height=200></canvas>
+    </div>
     
     <div id="content" >
         <input type="file" id="thefile" accept="audio/*" />
         <img src="2.jpg" id="img" class="box" style="z-index: 3;"/>
-        
+        <!-- <canvas class="box" id="canvas" style="z-index:3;"></canvas> -->
         <canvas id="canvas2" class="box"  style="z-index: 2;">
           
 
@@ -23,9 +25,11 @@
         
       
    
-        <button style="cursor: pointer;z-index: 999999; position: absolute;left: 80%;" onclick="stop()">ds</button>
-        <audio id="audio" controls style="z-index:20"></audio>
+      
       </div>
+      <button id="stop" style="cursor: pointer;z-index: 999999; position: relative;left: 40%;top: 50%;" onclick="stop()">stop</button>
+      <button id="start" style="cursor: pointer;z-index: 999999; position: relative;left: 45%;top: 50%;" >start</button>
+      <audio id="audio" controls style="z-index:20"></audio>
       <video id="myVideo" controls="controls" style="cursor: pointer;z-index: 999999; position: absolute;left: 30%;"></video>
       <a id="dl" href="" download="download.mp4" style="cursor: pointer;z-index: 999999; position: absolute;left: 80%;"></a>
      <div id="message"></div>

@@ -19,9 +19,9 @@ window.onload = function() {
      // canvas.height = window.innerHeight;
       canvas2.height = window.innerHeight;
      
-      //ctx = canvas.getContext("2d");
+     // ctx = canvas.getContext("2d");
       ctx2 = canvas2.getContext("2d");
-     // ctx.globalAlpha =0.2;
+    // ctx.globalAlpha =0.2;
       
 
        //make_image();
@@ -53,8 +53,9 @@ window.onload = function() {
  
         analyser.getByteFrequencyData(dataArray);
     
-        ctx2.fillStyle = "#fff";
+        ctx2.fillStyle = "#22b405";
         ctx2.fillRect(0, 0, WIDTH, HEIGHT);
+        // draw(WIDTH,HEIGHT);
   
         for (var i = 0; i < bufferLength; i++) {
           barHeight = dataArray[i];
@@ -75,6 +76,17 @@ window.onload = function() {
       audio.play();
       renderFrame();
     };
+    function draw(width,height) {
+      // var c = document.getElementById("myCanvas");
+      // var ctx = c.getContext("2d");
+     // ctx2.clearRect(0, 0, window.innerWidth,window.innerHeight); 
+      var img = document.getElementById("img")
+      var pat = ctx2.createPattern(img, 'repeat');
+      ctx2.rect(0, 0, width,height);
+      ctx2.fillStyle = pat;
+      ctx2.fill();
+    }
+
     function make_image(){
         baseimage = new Image();
         baseimage.src = '2.jpg';
@@ -82,6 +94,7 @@ window.onload = function() {
       
         baseimage.onload =function(){
             ctx.drawImage(baseimage,0,0,window.innerWidth,window.innerHeight);
+            // ctx2.drawImage(canvas, 0, 0);
         }
         
     }
