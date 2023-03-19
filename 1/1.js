@@ -14,14 +14,14 @@ window.onload = function() {
   
      // var canvas = document.getElementById("canvas");
       var canvas2 = document.getElementById("canvas2");
-     // canvas.width = window.innerWidth;
+      //canvas.width = window.innerWidth;
       canvas2.width = window.innerWidth;
-     // canvas.height = window.innerHeight;
+      //canvas.height = window.innerHeight;
       canvas2.height = window.innerHeight;
      
-     // ctx = canvas.getContext("2d");
+      //ctx = canvas.getContext("2d");
       ctx2 = canvas2.getContext("2d");
-    // ctx.globalAlpha =0.2;
+     //ctx.globalAlpha =0.2;
       
 
        //make_image();
@@ -55,7 +55,7 @@ window.onload = function() {
     
         ctx2.fillStyle = "#22b405";
         ctx2.fillRect(0, 0, WIDTH, HEIGHT);
-        // draw(WIDTH,HEIGHT);
+        //  draw(WIDTH,HEIGHT);
   
         for (var i = 0; i < bufferLength; i++) {
           barHeight = dataArray[i];

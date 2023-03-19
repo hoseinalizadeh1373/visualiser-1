@@ -27,14 +27,15 @@ function fn() {
 var recordedChunks = [];
 
 var time = 0;
+
 var canvas = document.getElementById("canvas2");
 
 return new Promise(function (res, rej) {
     var stream = canvas.captureStream(60);
 
     mediaRecorder = new MediaRecorder(stream, {
-        // mimeType: "video/webm; codecs=vp9"
-        mimeType: "video/mp4; codecs=vp9"
+        mimeType: "video/webm; codecs=vp9"
+        // mimeType: "video/mp4; codecs=vp9"
     });
 
     document.getElementById("start").addEventListener('click',function(){
