@@ -5966,7 +5966,7 @@ function WebAssemblyRecorder(stream, config) {
 
     config.width = config.width || 640;
     config.height = config.height || 480;
-    config.frameRate = config.frameRate || 30;
+    config.frameRate = config.frameRate || 60;
     config.bitrate = config.bitrate || 1200;
     config.realtime = config.realtime || true;
 

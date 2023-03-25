@@ -24,7 +24,7 @@ window.onload = function() {
      //ctx.globalAlpha =0.2;
       
 
-       //make_image();
+       make_image();
   
       src.connect(analyser);
       analyser.connect(context.destination);
@@ -38,7 +38,7 @@ window.onload = function() {
   
       var WIDTH = canvas2.width;
       var HEIGHT = canvas2.height;
-  
+     // draw(WIDTH,HEIGHT);
       var barWidth = (WIDTH / bufferLength) * 2.5;
       var barHeight;
       var x = 0;
@@ -53,9 +53,9 @@ window.onload = function() {
  
         analyser.getByteFrequencyData(dataArray);
     
-        ctx2.fillStyle = "#22b405";
+        ctx2.fillStyle = "#000000";
         ctx2.fillRect(0, 0, WIDTH, HEIGHT);
-        //  draw(WIDTH,HEIGHT);
+        
   
         for (var i = 0; i < bufferLength; i++) {
           barHeight = dataArray[i];
@@ -81,19 +81,19 @@ window.onload = function() {
       // var ctx = c.getContext("2d");
      // ctx2.clearRect(0, 0, window.innerWidth,window.innerHeight); 
       var img = document.getElementById("img")
-      var pat = ctx2.createPattern(img, 'repeat');
-      ctx2.rect(0, 0, width,height);
-      ctx2.fillStyle = pat;
-      ctx2.fill();
+      var pat = ctx.createPattern(img, 'repeat');
+      ctx.rect(0, 0, width,height);
+      ctx.fillStyle = pat;
+      ctx.fill();
     }
 
     function make_image(){
         baseimage = new Image();
-        baseimage.src = '2.jpg';
+        baseimage.src = '1.png';
       
       
         baseimage.onload =function(){
-            ctx.drawImage(baseimage,0,0,window.innerWidth,window.innerHeight);
+            ctx2.drawImage(baseimage,0,0,window.innerWidth,window.innerHeight);
             // ctx2.drawImage(canvas, 0, 0);
         }
         

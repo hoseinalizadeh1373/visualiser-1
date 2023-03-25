@@ -53,7 +53,8 @@ return new Promise(function (res, rej) {
 
     mediaRecorder.onstop = function (event) {
         var blob = new Blob(recordedChunks, {
-            "type": "video/webm"
+            // "type": "video/webm"
+            "type": "video/mp4"
         });
         var url = URL.createObjectURL(blob);
         res({url, blob}); // resolve both blob and url in an object

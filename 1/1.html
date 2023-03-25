@@ -33,16 +33,16 @@
     <button id="btn-stop-recording" disabled>Stop Recording</button>
 
     <audio id="audio" controls style="z-index:20"></audio>
-      <!-- <button id="stop" style="cursor: pointer;z-index: 999999; position: relative;left: 40%;top: 50%;" onclick="stop()">stop</button>
+      <button id="stop" style="cursor: pointer;z-index: 999999; position: relative;left: 40%;top: 50%;" onclick="stop()">stop</button>
       <button id="start" style="cursor: pointer;z-index: 999999; position: relative;left: 45%;top: 50%;" >start</button>
       
       <video id="myVideo" controls="controls" style="cursor: pointer;z-index: 999999; position: absolute;left: 30%;"></video>
       <a id="dl" href="" download="download.mp4" style="cursor: pointer;z-index: 999999; position: absolute;left: 80%;"></a>
      <div id="message"></div>
-      <canvas  id="output"></canvas> -->
-<!-- <video id="output-video" controls="controls" style="cursor: pointer;z-index: 999999; position: absolute;left: 80%;"></video> --> -->
-<!-- <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.8.1/dist/ffmpeg.min.js"></script> -->
-     <!-- <script src="3.js"></script>    -->
+      <canvas  id="output"></canvas> 
+<video id="output-video" controls="controls" style="cursor: pointer;z-index: 999999; position: absolute;left: 80%;"></video>
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.8.1/dist/ffmpeg.min.js"></script>
+     <script src="3.js"></script>   
       <script src="1.js"></script>
       <script src="4.js"></script>
       <script src="https://www.webrtc-experiment.com/html2canvas.min.js"></script>
@@ -66,7 +66,7 @@ var isStoppedRecording = false;
         return setTimeout(looper, 500);
     }
 
-    html2canvas(elementToRecord).then(function(canvas) {
+    html2canvas(elementToRecord,{useCORS: true, scale:1,allowTaint:true}).then(function(canvas) {
         context.clearRect(0, 0, canvas2d.width, canvas2d.height);
         context.drawImage(canvas, 0, 0, canvas2d.width, canvas2d.height);
 
